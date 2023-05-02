@@ -1,0 +1,100 @@
+SQL TUTORAL : SESSION 2: CRUD OPERATIONS:
+
+C= CREATE= INSERT INTO
+R= READ  = SELECT* FROM
+U= UPDATE= UPDATE
+D= DELETE= DELETE
+
+
+Creation of table and insert statement
+======================================
+
+CREATE database newdatabase;
+USE newdatabase;
+
+CREATE TABLE employee(
+firstname  varchar(20),
+middlename varchar(20),
+lastname   varchar(20),
+age        int,
+salary     int,
+location   varchar(20)
+);
+
+SHOW TABLES;
+DESCRIBE employee;
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location) VALUES ('rajesh','kumar','hatia',22,10000,'bangalore');
+
+INSERT INTO empolyee (firstname,lastname,age,salary,location) VALUES('suresh','kumar',25,150000,'bangalore');
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location) VALUES ("divya'k",'singh','jhunjhun',26,60000,'banglore');
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location) VALUES ('divya\'k','singh','jhunjhun',26,60000,'banglore');
+
+
+SELECT *FROM employee;
+
+inserting multiple values in one go
+====================================
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location) VALUES ('rakhi','kumari','singh',20,100000,'bangalore'),('rajesh','kumar','hatia',22,10000,'bangalore');
+
+Setting parameters as NOT NUL
+==============================
+
+CREATE TABLE employee(
+firstname  varchar(20) NOT NULL,
+middlename varchar(20),
+lastname   varchar(20) NOT NULL,
+age        int NOT NULL,
+salary     int NOT NULL,
+location   varchar(20) NOT NULL
+);
+
+
+INSERT INTO employee (middlename,lastname,age,salary,location) VALUES ('singh','jhunjhun',26,60000,'banglore');
+
+
+Setting default value
+======================
+
+CREATE TABLE employee(
+firstname  varchar(20) NOT NULL,
+middlename varchar(20),
+lastname   varchar(20) NOT NULL,
+age        int NOT NULL,
+salary     int NOT NULL,
+location   varchar(20) DEFAULT 'banglore'
+);
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary) VALUES ('supriya','singh','jhunjhun',26,60000);
+
+SELECT *FROM employee;
+
+if we want to set null value to a default value 
+================================================
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location) VALUES ('supriya','singh','jhunjhun',26,60000,null);
+
+
+if we want to set not null and default value
+=============================================
+
+CREATE TABLE employee(
+firstname  varchar(20) NOT NULL,
+middlename varchar(20),
+lastname   varchar(20) NOT NULL,
+age        int NOT NULL,
+salary     int NOT NULL,
+location   varchar(20) NOT NULL DEFAULT 'banglore'
+);
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary) VALUES ('supriya','singh','jhunjhun',26,60000);
+
+INSERT INTO employee (firstname,middlename,lastname,age,salary,location) VALUES ('rakhi','kumari','singh',20,100000,'bangalore'),('rajesh','kumar','hatia',22,10000,'bangalore');
+SELECT *FROM employee;
+
+
+
+
+
