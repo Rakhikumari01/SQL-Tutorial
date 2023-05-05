@@ -1,0 +1,88 @@
+SESSION 4: SQL
+==============
+
+CRUD operations
+ 
+create -insert
+read - select
+update- update
+delete - delete
+
+DROP  newdatabase;
+CREATE DATBASE newdatabase;
+
+USE newdatabase;
+
+CREATE TABLE employee(
+id int PRIMARY KEY,
+firstname varchar(20),
+middlename varchar(20),
+lastname varchar(20) NOT NULL,
+age int NOT NULL,
+salary int NOT NULL,
+location varchar(20) NOT NULL DEFAULT 'banglore'
+);
+
+INSERT INTO employee(id,firstname,lastname,age,salary) VALUES(1,'kapil','sharma',25,80000);
+
+INSERT INTO employee(id,firstname,lastname,age,salary) VALUES(2,'rajesh','sharma',32,85000);
+
+
+SELECT
+======
+
+selecting all columns
+select * from employee;
+
+how to get only 2 columns
+selecting specific columns
+
+select firstname,lastname from employee;
+
+get some rows basesd on some condition 
+select by applying a where clause(filter condition)
+
+SELECT *FROM employee where age >29;
+
+select *from employee where firstname ='kapil';
+by default it is case insensitive
+
+select *from employee where binary firstname ='Kapil';
+//shows null value ie empty table
+//the above statement will match the exact case and is case sensitive
+
+
+ALIAS
+======
+
+select firstname as name,lastname as surname from employee;
+
+UPDATE
+=======
+
+update empolyee set lastname ='sinha' where firstname ='rajesh';	
+
+ALTER COMMANd
+=============
+
+alter table employee add column jobtitle varchar(50);
+alter table employee drop column jobtitle;
+alter table employee modify column firstname varchar(30);
+alter table employee drop primary key;
+alter table employee add primary key(id);
+
+DDL AND DML
+===========
+
+data definition language - deals with table structure 
+create,alter,drop -ddl commands
+
+data manipulation language - here we deal with the data directly.
+
+insert,update,delete - dml commands
+
+truncate also removes all record -ddl
+
+truncates directly drop the table and recreate it.
+ 
+
