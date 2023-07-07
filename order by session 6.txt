@@ -1,0 +1,52 @@
+Distinct  - to remove duplicates
+=========
+select location from students;
+
+select DISTINCT location from students;  //removed redundency
+
+select DISTINCT studentComapny from students;
+
+select Distinct sourceOfJoining from students;
+
+Order By  - to get in ascending or descending order
+==========
+
+select *from students ORDER BY selectedCourse;
+select studentfName from students ORDER BY studentfName;
+
+select studenfName,studentLname from students ORDER BY studentLname;
+select studenfName,studentLname from students ORDER BY 1;
+
+
+LIMIT always use with order by used to get specific number of data
+==========
+select *from students limit 3;
+select studentId,selectedCourse,location from students order by selectedCourse limit 4;
+
+want to know which last five students have joined based on enrollment date
+select studentId,sourceOfJoining from students order by enrollmentDate desc limit 2;
+
+
+LIKE  - to give things which looks like this
+=======
+for all students name satrating with dho
+
+
+ select studentId,studenfname,studentLname,stydentMname,studentEmail,studentPNo,studentCompany,batcDate,sourceOfJoining from students where studenfname LIKE '%dh';
+
+ % is a wildcart character.
+
+ends with specific characters
+
+ select studentId,studenfname,studentLname,studentMname,studentEmail,studentPNo,studentCompany,batcDate,sourceOfJoining from students where studenfname LIKE '%at';
+
+who have five characters in first name and it ca be anything
+ select studentId,studenfname,studentLname,studentMname,studentEmail,studentPNo,studentCompany,batcDate,sourceOfJoining from students where studenfname LIKE '-----';
+
+
+studentId,studenfname,studentLname,studentMname,studentEmail,studentPNo,studentCompany,batcDate,sourceOfJoining from students where studenfname LIKE '%\%at';
+
+
+
+
+
